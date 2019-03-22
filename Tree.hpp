@@ -1,0 +1,67 @@
+#include <iostream>
+//#include <Tree.cpp>//
+using namespace std;
+namespace ariel
+{
+
+  class BST
+ {
+   struct node
+   {
+      int data;
+      node* left;
+      node* right;
+   };
+   private:
+   
+   node* root;
+   
+   node* makeEmpty(node* t);
+
+   node* insert(int i, node* t);
+   
+   node* remove(int i, node* t);
+
+   int RootInt(node* t);
+
+   int getLeftVal(node* t,int i);
+
+   int getRightVal(node* t,int i);
+
+   int getParentVal(node* t,int i);
+
+   bool isExist(node*t, int i);
+   
+   int nodesCountHelper(node* t);
+
+   void inorder(node* t);
+   
+   node* findMin(node* t);
+
+   public:
+    
+   
+    BST();  
+
+   ~BST();
+   
+   void insert(int x);
+   
+   void remove(int x);
+
+   void print();
+   
+   int size();
+
+   bool contains(int x);
+   
+   int Root();
+   
+   int right(int x);
+
+   int left(int x);
+
+   int parent(int x);
+  };
+}
+
