@@ -4,7 +4,7 @@ using namespace std;
 namespace ariel
 {
 
-  class BST
+  class Tree
  {
    struct node
    {
@@ -41,9 +41,9 @@ namespace ariel
    public:
     
    
-    BST();  
+    Tree();  
 
-   ~BST();
+   ~Tree();
    
    void insert(int x);
    

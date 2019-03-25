@@ -11,8 +11,8 @@ using std::cout, std::endl;
 #include "Tree.hpp"
 
 int main() {
-  ariel::BST emptytree;
-  ariel::BST threetree;  
+  ariel::Tree emptytree;
+  ariel::Tree threetree;  
   threetree.insert(5);
   threetree.insert(7);
   threetree.insert(3);
@@ -36,8 +36,8 @@ int main() {
   .CHECK_THROWS(threetree.insert(3))
   .CHECK_OK    (threetree.print())
   ;
-  ariel:: BST empty;
-  ariel:: BST standard;
+  ariel:: Tree empty;
+  ariel:: Tree standard;
   standard.insert(8);
   standard.insert(6);
   standard.insert(14);

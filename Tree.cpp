@@ -7,7 +7,7 @@ using namespace ariel;
 
     
 
-    BST::node* BST:: makeEmpty(node* t)
+    Tree::node* Tree:: makeEmpty(node* t)
     {
         if(t == NULL)
             return NULL;
@@ -18,7 +18,7 @@ using namespace ariel;
         }
         return NULL;
     }
-    bool BST:: isExist(node*t, int i)
+    bool Tree:: isExist(node*t, int i)
     {
          if(t==NULL)
          {
@@ -35,7 +35,7 @@ using namespace ariel;
          return isExist(t->right,i);
      }    
 
-    BST::node* BST:: insert(int i, node* t)
+    Tree::node* Tree:: insert(int i, node* t)
     {
         bool existance = isExist(t,i);
         try 
@@ -65,7 +65,7 @@ using namespace ariel;
         
     }
 
-    BST::node* BST::findMin(node* t)
+    Tree::node* Tree::findMin(node* t)
     {
         if(t == NULL)
             return NULL;
@@ -75,7 +75,7 @@ using namespace ariel;
             return findMin(t->left);
     }
 
-    /*BST::node* BST:: findMax(node* t)
+    /*Tree::node* Tree:: findMax(node* t)
     {
         if(t == NULL)
             return NULL;
@@ -85,7 +85,7 @@ using namespace ariel;
             return findMax(t->right);
     }*/
 
-    BST::node* BST:: remove(int i, node* t)
+    Tree::node* Tree:: remove(int i, node* t)
     {
         node* temp;
         bool existance = isExist(t,i);
@@ -127,12 +127,12 @@ using namespace ariel;
         
     
     
-    int BST:: RootInt(node* t)
+    int Tree:: RootInt(node* t)
     {
          return t->data;
     }
     
-    int BST:: getLeftVal(node* t,int i)
+    int Tree:: getLeftVal(node* t,int i)
     {
 
                 if(t->data==i)
@@ -160,7 +160,7 @@ using namespace ariel;
     }
 
 
-    int BST:: getRightVal(node* t,int i)
+    int Tree:: getRightVal(node* t,int i)
     {
 
                 if(t->data==i)
@@ -187,7 +187,7 @@ using namespace ariel;
 
     }
     
-    int BST:: getParentVal(node* t,int i)
+    int Tree:: getParentVal(node* t,int i)
     {
 
     if(t->left == NULL && t->right == NULL)
@@ -206,12 +206,12 @@ using namespace ariel;
 
    
 
-    int BST:: nodesCountHelper(node* t) 
+    int Tree:: nodesCountHelper(node* t) 
     {
         if (!t) return 0;
         else return 1 + nodesCountHelper(t->left) + nodesCountHelper(t->right);
     }
-    void BST:: inorder(node* t)
+    void Tree:: inorder(node* t)
     {
         if(t == NULL)
             return;
@@ -220,7 +220,7 @@ using namespace ariel;
         inorder(t->right);
     }
 
-    /*BST::node* BST:: find(node* t, int x)
+    /*Tree::node* Tree:: find(node* t, int x)
     {
         //if(t == NULL)
           //  return NULL;
@@ -233,59 +233,59 @@ using namespace ariel;
     }*/
 
 
-    BST::BST()
+    Tree::Tree()
     {
         root = NULL;
     }
 
-    BST::~BST()
+    Tree::~Tree()
     {
         root = makeEmpty(root);
     }
 
-    void BST:: insert(int x)
+    void Tree:: insert(int x)
     {
         root = insert(x, root);
     }
 
-    void BST:: remove(int x)
+    void Tree:: remove(int x)
     {
         root = remove(x, root);
     }
 
-    void BST:: print()
+    void Tree:: print()
     {
         inorder(root);
         cout << endl;
     }
 
     
-    int BST:: size()
+    int Tree:: size()
     {
          int x = nodesCountHelper(root);
          return x;
     }
-    bool BST:: contains(int x)
+    bool Tree:: contains(int x)
     {
        bool result = isExist(root,x);
        return result;
     }
-    int BST:: Root()
+    int Tree:: Root()
     {
        int x = RootInt(root);
        return x;
     }
-    int BST:: left(int x)
+    int Tree:: left(int x)
     {
       int result = getLeftVal(root,x);
       return result;
     }
-    int BST:: right(int x)
+    int Tree:: right(int x)
     {
       int result = getRightVal(root,x);
       return result;
     }
-    int BST:: parent(int x)
+    int Tree:: parent(int x)
     {
       int result = getParentVal(root,x);
       return result;
