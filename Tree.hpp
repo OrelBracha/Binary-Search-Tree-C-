@@ -14,7 +14,7 @@ namespace ariel
    };
    private:
    
-   node* root;
+   
    
    node* makeEmpty(node* t);
 
@@ -39,7 +39,7 @@ namespace ariel
    node* findMin(node* t);
 
    public:
-    
+    node* root;
    
     Tree();  
 
