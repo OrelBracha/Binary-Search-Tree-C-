@@ -22,7 +22,7 @@ namespace ariel
    
    node* remove(int i, node* t);
 
-   int RootInt(node* t);
+   int rootInt(node* t);
 
    int getLeftVal(node* t,int i);
 
@@ -39,7 +39,7 @@ namespace ariel
    node* findMin(node* t);
 
    public:
-    node* root;
+    node* Root;
    
     Tree();  
 
@@ -55,7 +55,7 @@ namespace ariel
 
    bool contains(int x);
    
-   int Root();
+   int root();
    
    int right(int x);
 

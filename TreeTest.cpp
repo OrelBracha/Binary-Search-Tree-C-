@@ -28,7 +28,7 @@ int main() {
   .CHECK_EQUAL (emptytree.size() ,0)
   
   .CHECK_EQUAL (threetree.size(), 3)
-  .CHECK_EQUAL (threetree.Root(), 5)
+  .CHECK_EQUAL (threetree.root(), 5)
   .CHECK_EQUAL (threetree.parent(3), 5)
   .CHECK_EQUAL (threetree.parent(7), 5)
   .CHECK_EQUAL (threetree.left(5), 3)
@@ -55,7 +55,7 @@ int main() {
   .CHECK_EQUAL (standard.contains(2), false)
   .CHECK_THROWS (standard.remove(3))
   .CHECK_THROWS (standard.insert(14))
-  .CHECK_EQUAL (standard.Root(), 8)
+  .CHECK_EQUAL (standard.root(), 8)
   .print();
   
   cout << "You have " << tc.right() << " right answers and " << tc.wrong() << " wrong answers so your grade is " << tc.grade() << ". Great!" << endl;

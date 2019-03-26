@@ -127,7 +127,7 @@ using namespace ariel;
         
     
     
-    int Tree:: RootInt(node* t)
+    int Tree:: rootInt(node* t)
     {
          return t->data;
     }
@@ -235,59 +235,59 @@ using namespace ariel;
 
     Tree::Tree()
     {
-        root = NULL;
+        Root = NULL;
     }
 
     Tree::~Tree()
     {
-        root = makeEmpty(root);
+        Root = makeEmpty(Root);
     }
 
     void Tree:: insert(int x)
     {
-        root = insert(x, root);
+        Root = insert(x, Root);
     }
 
     void Tree:: remove(int x)
     {
-        root = remove(x, root);
+        Root = remove(x, Root);
     }
 
     void Tree:: print()
     {
-        inorder(root);
+        inorder(Root);
         cout << endl;
     }
 
     
     int Tree:: size()
     {
-         int x = nodesCountHelper(root);
+         int x = nodesCountHelper(Root);
          return x;
     }
     bool Tree:: contains(int x)
     {
-       bool result = isExist(root,x);
+       bool result = isExist(Root,x);
        return result;
     }
-    int Tree:: Root()
+    int Tree:: root()
     {
-       int x = RootInt(root);
+       int x = rootInt(Root);
        return x;
     }
     int Tree:: left(int x)
     {
-      int result = getLeftVal(root,x);
+      int result = getLeftVal(Root,x);
       return result;
     }
     int Tree:: right(int x)
     {
-      int result = getRightVal(root,x);
+      int result = getRightVal(Root,x);
       return result;
     }
     int Tree:: parent(int x)
     {
-      int result = getParentVal(root,x);
+      int result = getParentVal(Root,x);
       return result;
     }
 
