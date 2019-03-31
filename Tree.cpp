@@ -131,7 +131,13 @@ using namespace ariel;
     
     int Tree:: rootInt(node* t)
     {
-         return t->data;
+      if(t==NULL)
+       {
+          cout<<"This is null value!"<<endl;
+          throw t;
+           
+        }    
+     return t->data;
     }
     
     int Tree:: getLeftVal(node* t,int i)
@@ -141,17 +147,19 @@ using namespace ariel;
                     if(t->left==NULL)
                     {
                     cout<<"There is no right child for the selected node"<<endl;
-                    return NULL;
+                    throw t;
                     }
                     else
                     {
                     return t->left->data;
                     } 
                 }
-                if(t==NULL)
+                  
+                  if(t==NULL)
                 {
-
-                    return NULL;
+                    cout<<"This is null value!"<<endl;
+                    throw t;
+           
                 }
                  
 
@@ -160,7 +168,7 @@ using namespace ariel;
 
                     return getLeftVal(t->left,i);
                 }
-                else if(i>t->data)
+                else 
                 {
 
                     return getLeftVal(t->right,i);
@@ -177,17 +185,18 @@ using namespace ariel;
                     if(t->right==NULL)
                     {
                     cout<<"There is no right child for the selected node"<<endl;
-                    return NULL;
+                    throw t;
                     }
                     else
                    {
                     return t->right->data;
                    }
                 }
-                if(t==NULL)
+               if(t==NULL)
                 {
-
-                    return NULL;
+                    cout<<"This is null value!"<<endl;
+                    throw t;
+           
                 }
 
                 if(i<t->data)
@@ -195,7 +204,7 @@ using namespace ariel;
 
                     return getRightVal(t->left,i);
                 }
-                else if(i>t->data)
+                else 
                 {
 
                     return getRightVal(t->right,i);
@@ -205,11 +214,15 @@ using namespace ariel;
     
     int Tree:: getParentVal(node* t,int i)
     {
-    if(t==NULL)
-       return NULL;
+     if(t==NULL)
+        {
+          cout<<"This is null value!"<<endl;
+           throw t;
+           
+         }
     
     if(t->left == NULL && t->right == NULL)
-       return NULL;
+       throw t;
 
     if( (t->left != NULL && t->left->data == i)
         || (t->right != NULL && t->right->data == i))
@@ -218,7 +231,7 @@ using namespace ariel;
     if(t->data>i)
        return getParentVal(t->left,i);
 
-    if(t->data<i)
+    else
        return getParentVal(t->right,i);
     }
 
