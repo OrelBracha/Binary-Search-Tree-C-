@@ -85,7 +85,8 @@ using namespace ariel;
             return findMax(t->right);
     }*/
 
-    Tree::node* Tree:: remove(int i, node* t)
+  
+ Tree::node* Tree:: remove(int i, node* t)
     {
         node* temp;
         bool existance = isExist(t,i);
@@ -123,6 +124,7 @@ using namespace ariel;
         } 
        
         return t;
+  
      }
         
     
@@ -134,17 +136,24 @@ using namespace ariel;
     
     int Tree:: getLeftVal(node* t,int i)
     {
-
                 if(t->data==i)
                 {
-
+                    if(t->left==NULL)
+                    {
+                    cout<<"There is no right child for the selected node"<<endl;
+                    return NULL;
+                    }
+                    else
+                    {
                     return t->left->data;
+                    } 
                 }
-               else  if(t==NULL)
+                if(t==NULL)
                 {
 
                     return NULL;
                 }
+                 
 
                 else if(i<t->data)
                 {
@@ -165,16 +174,23 @@ using namespace ariel;
 
                 if(t->data==i)
                 {
-
+                    if(t->right==NULL)
+                    {
+                    cout<<"There is no right child for the selected node"<<endl;
+                    return NULL;
+                    }
+                    else
+                   {
                     return t->right->data;
+                   }
                 }
-               else  if(t==NULL)
+                if(t==NULL)
                 {
 
                     return NULL;
                 }
 
-                else if(i<t->data)
+                if(i<t->data)
                 {
 
                     return getRightVal(t->left,i);
@@ -189,7 +205,9 @@ using namespace ariel;
     
     int Tree:: getParentVal(node* t,int i)
     {
-
+    if(t==NULL)
+       return NULL;
+    
     if(t->left == NULL && t->right == NULL)
        return NULL;
 
@@ -200,7 +218,7 @@ using namespace ariel;
     if(t->data>i)
        return getParentVal(t->left,i);
 
-    if(t->data <i)
+    if(t->data<i)
        return getParentVal(t->right,i);
     }
 
